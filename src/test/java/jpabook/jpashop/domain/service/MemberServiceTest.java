@@ -1,9 +1,8 @@
 package jpabook.jpashop.domain.service;
 
-import jakarta.persistence.EntityManager;
 import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.domain.repository.MemberRepository;
-import org.junit.Assert;
+import jpabook.jpashop.repository.MemberRepository;
+import jpabook.jpashop.service.MemberService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class MemberServiceTest {
 
-    @Autowired MemberService memberService;
+    @Autowired
+    MemberService memberService;
     @Autowired MemberRepository memberRepository;
     //@Autowired EntityManager em; rollback 하더라도 쿼리 보고싶을땐?
 

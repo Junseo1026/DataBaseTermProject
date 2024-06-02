@@ -6,11 +6,12 @@ import jpabook.jpashop.domain.Address;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderStatus;
-import jpabook.jpashop.domain.exception.NotEnoughStockException;
+import jpabook.jpashop.exception.NotEnoughStockException;
 import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.domain.item.Item;
-import jpabook.jpashop.domain.repository.OrderRepository;
+import jpabook.jpashop.repository.OrderRepository;
 
+import jpabook.jpashop.service.OrderService;
 import org.junit.runner.RunWith;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,8 @@ import static org.junit.Assert.assertEquals;
 public class OrderServiceTest {
 
     @PersistenceContext EntityManager em;
-    @Autowired OrderService orderService;
+    @Autowired
+    OrderService orderService;
     @Autowired OrderRepository orderRepository;
 
     @Test
